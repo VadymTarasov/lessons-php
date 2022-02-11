@@ -27,3 +27,4 @@ switch ($a) {
     default:
         echo "Ooops " . $a;
 }
+
