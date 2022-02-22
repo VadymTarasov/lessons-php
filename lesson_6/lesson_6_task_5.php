@@ -11,17 +11,24 @@ $rating = [
     "Непредсказуемость" => 8
 ];
 $item = 6;
-function my_func($array, $item)
+function my_search($array, $item)
 {
+    $result = [];
     foreach ($array as $k => $v) {
-        if ($v === $item) {
-            echo $k;
-        } else if (is_array($v)) {
-            foreach (my_func($v, $item) as $v2) {
-                echo $v2;
+        if ($v == $item) {
+            array_push($result, $k);
+        }
+        else if (is_array($v)) {
+            foreach (my_search($v, $item) as $val) {
+                array_push($result, $val);
             }
         }
     }
+    if (!empty($result)) {
+        return $result;
+    } else {
+        return false;
+    }
 }
-my_func($rating, $item);
+var_dump(my_search($rating, $item));
 
