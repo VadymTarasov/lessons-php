@@ -16,21 +16,25 @@ $seat = [
     "ряд 7" => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
 ];
 
-$item = 10;
+$item = 9;
 function my_search($array, $item)
 {
-    $result = "";
+    $result = [];
     foreach ($array as $k => $v) {
         if ($v == $item) {
-            $result .= "$k ";
+            array_push($result, $k);
         }
         foreach ($v as $val => $val2) {
             if ($val2 == $item) {
-                $result .= "$val ";
+                array_push($result, $val);
             }
         }
     }
-    echo $result;
+    if (!empty($result)) {
+        return $result;
+    } else {
+        return false;
+    }
 }
 
-my_search($seat, $item);
+print_r(my_search($seat, $item));
