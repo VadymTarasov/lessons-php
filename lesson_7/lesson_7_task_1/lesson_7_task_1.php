@@ -33,7 +33,6 @@ function viewDir($dir, $space)
         if (($file == '.') || ($file == '..')) continue;
         $path = $dir . '/' . $file;
         if (is_dir($path)) {
-            $x = substr(sprintf('%o', fileperms($path)), -3);
             echo '<b>' . $space . "d " . $file . "&nbsp;&nbsp;&nbsp;&nbsp; права -" . substr(sprintf('%o', fileperms($path)), -3). '&nbsp;&nbsp;&nbsp;&nbsp;размер - '  . filesize($path) . ' байтов' ."</b><br />";
 
             viewDir($path, $space . '&nbsp;&nbsp;');
