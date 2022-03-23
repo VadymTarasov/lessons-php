@@ -1,0 +1,14 @@
+{
+  "name": "vendor_name/lesson_7",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "vadym",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  }
+}
