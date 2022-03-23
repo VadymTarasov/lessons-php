@@ -37,4 +37,26 @@ function my_search($array, $item)
     }
 }
 
-print_r(my_search($seat, $item));
+var_dump(my_search($seat, $item));
+
+//вернёт первый найденый элемент
+function search($array, $item)
+{
+    foreach ($array as $k => $v) {
+        if ($v == $item) {
+            $result = $k;
+        } elseif ($result == null){
+            foreach ($v as $val => $val2) {
+                if ($val2 == $item) {
+                    $result = $val;
+                }
+            }
+        }
+    }
+    if ($result !== null) {
+        return $result;
+    } else {
+        return false;
+    }
+}
+var_dump(search($seat, $item));

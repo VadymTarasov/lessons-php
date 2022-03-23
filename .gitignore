@@ -5,6 +5,6 @@ link_index.php
 # Игнорировать формата csv файлы
 #*.csv
 
-lesson_7/lesson_7_task_2/results/
+lesson_7/lesson_7_task_2/results/*.csv
 
 
