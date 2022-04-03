@@ -24,7 +24,7 @@ PS. Аргументы скрипт должен принимать с CLI. На
 
 php index.php '/var/www/data'*/
 
-$dir = '/var/www/lessons-php/lesson_7/lesson_7_task_1';
+$dir = '/var/www/lessons.loc/lesson_7/lesson_7_task_1';
 
 function viewDir($dir, $space)
 {

@@ -44,8 +44,8 @@ php index.php '/var/www/data.csv' '/var/www/resultDir'
 
 echo '<pre>';
 
-$path = "/var/www/lessons-php/lesson_7/lesson_7_task_2/students.csv";
-$dir = "/var/www/lessons-php/lesson_7/lesson_7_task_2/results/";
+$path = "/var/www/lessons.loc/lesson_7/lesson_7_task_2/students.csv";
+$dir = "/var/www/lessons.loc/lesson_7/lesson_7_task_2/results/";
 function my_search($path, $dir)
 {
     $students = [];
