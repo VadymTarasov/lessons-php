@@ -11,26 +11,19 @@ $arr = [
     "Игра актеров",
     "Игра актеров",
     "Игра актеров",
-    "Игра актеров",
+    "Захватываемость",
     "Захватываемость",
 
 
 ];
-var_dump(array_unique($arr));
+//var_dump(array_unique($arr));
 
-echo '<br>';
-function del_duplicate (array $arr)
+function del_duplicate(array $arr)
 {
-    $b = array_count_values($arr);
     $res = [];
     for ($i = 0; $i < count($arr); $i++) {
-        foreach ($b as $key => $val) {
-            if ($arr[$i] == $key && $val == 1) {
-                $res[] = $arr[$i];
-            }
-            if ($arr[$i] == $key && $val > 1 && !in_array("$arr[$i]", $res) ) {
-                $res[] = $arr[$i];
-            }
+        if (!in_array("$arr[$i]", $res)) {
+            $res[] = $arr[$i];
         }
     }
     return ($res);
