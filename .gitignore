@@ -2,7 +2,7 @@
 .idea
 
 # Игнорировать формата csv файлы
-#*.csv
+*.csv
 
 lesson_7/lesson_7_task_2/results/*.csv
 
