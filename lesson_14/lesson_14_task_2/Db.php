@@ -10,7 +10,7 @@ class Db
 
     public function __construct()
     {
-        $this->db = new PDO("mysql:dbname=db;host=127.0.0.1", "root", "123654789");
+        $this->db = new PDO("mysql:dbname=db;host=127.0.0.1", "root", "");
     }
 
     public function getAllCities(): array
