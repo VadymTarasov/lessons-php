@@ -1,0 +1,23 @@
+{
+    "name": "vadym/lessons",
+    "description": "lessons php",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vadym"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ext-mbstring": "*",
+        "ext-iconv": "*",
+        "ext-pdo": "*",
+      "ext-mysqli": "*"
+    }
+}
