@@ -5,10 +5,11 @@
 
 myFunction() {
   a=$1
+  echo "старе ім’я $1"
   b=`echo $a | cut -d. -f 1`
   c=$2
   d="."
   e="$b$d$c"
-  echo "$e"
+  echo "нове ім’я $e"
 }
 myFunction test.txt php
