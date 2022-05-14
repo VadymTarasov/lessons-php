@@ -6,7 +6,6 @@ require_once 'Task1.php';
 use App\lesson_19\Task1;
 
 
-echo phpinfo();
 $arr = [1, 2, 3, 4, 5];
 
 $res = Task1::getResultMultiplication($arr, 2);
