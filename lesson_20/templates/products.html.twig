@@ -1,0 +1,24 @@
+
+{% extends 'main.html.twig' %}
+{% block table %}
+<table class="table">
+        <thead>
+        <tr>
+                <th scope="col">название</th>
+                <th scope="col">цена</th>
+                <th scope="col">сезон</th>
+        </tr>
+        </thead>
+        {% for product in products %}
+        <tbody>
+        <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.season }}</td>
+                <td><a href="update.php?id={{ product.id }}">изменить</a></td>
+                <td><a style="color: red" href="delete.php?id={{ product.id }}">удалить</a></td>
+        </tr>
+        </tbody>
+        {% endfor %}
+</table>
+{% endblock %}
