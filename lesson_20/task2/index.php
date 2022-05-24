@@ -23,6 +23,15 @@ $TeamLeader->removeObserver($work2);
 $work5 = new Junior();
 $TeamLeader->addObserver($work5);
 
+$work6 = new Junior();
+$TeamLeader->addObserver($work6);
+
+$work7 = new Junior();
+$TeamLeader->addObserver($work7);
+
+$work8 = new Junior();
+$TeamLeader->addObserver($work8);
+
 echo "<br>";
 $work3 = new Junior();
 $TeamLeader->addObserver($work3);
