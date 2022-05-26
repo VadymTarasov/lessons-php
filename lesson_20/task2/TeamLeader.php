@@ -1,4 +1,5 @@
 <?php
+
 namespace App\lesson_20\task2;
 
 
@@ -25,10 +26,10 @@ final class TeamLeader implements SubjectInterface
     public function getMood()
     {
         echo "$this->mood  - ";
-        if ($this->mood == 4 ) return "Хорошем настроении<br>";
-        if ($this->mood == 3 ) return "Нормальном настроении<br>";
-        if ($this->mood == 2 ) return "Плохом<br>";
-        if ($this->mood == 1 ) return "Состояние «не попадись на глаза»<br>";
+        if ($this->mood == 4) return "Хорошем настроении<br>";
+        if ($this->mood == 3) return "Нормальном настроении<br>";
+        if ($this->mood == 2) return "Плохом<br>";
+        if ($this->mood == 1) return "Состояние «не попадись на глаза»<br>";
 
     }
 
@@ -55,11 +56,11 @@ final class TeamLeader implements SubjectInterface
     }
 
     /**
-     * @param  int  $getJobJunior  работа джуна.
+     * @param int $getJobJunior работа джуна.
      */
     public function takeMood(int $getJobJunior): void
     {
-        if ($getJobJunior > 0){
+        if ($getJobJunior > 0) {
             $this->mood += 1;
         } else $this->mood -= 1;
         if ($this->mood > 3 && $getJobJunior == 1) $this->mood = 4;

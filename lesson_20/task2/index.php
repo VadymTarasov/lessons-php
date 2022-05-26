@@ -13,37 +13,14 @@ $TeamLeader = new TeamLeader();
 echo $TeamLeader->getMood();
 echo "<br>";
 
-$work1 = new Junior();
-$TeamLeader->addObserver($work1);
-
-$work2 = new Junior();
-$TeamLeader->addObserver($work2);
-$TeamLeader->removeObserver($work2);
-
-$work5 = new Junior();
-$TeamLeader->addObserver($work5);
-
-$work6 = new Junior();
-$TeamLeader->addObserver($work6);
-
-$work7 = new Junior();
-$TeamLeader->addObserver($work7);
-
-$work8 = new Junior();
-$TeamLeader->addObserver($work8);
-
-echo "<br>";
-$work3 = new Junior();
-$TeamLeader->addObserver($work3);
+$jun  = new Junior();
 $manager = new Manager();
 $hr = new HR();
 
+$TeamLeader->addObserver($jun);
 $TeamLeader->addObserver($manager);
 $TeamLeader->addObserver($hr);
 
 $TeamLeader->notifyObservers();
-
-echo "<br>";
-
-echo $TeamLeader->getMood();
+$TeamLeader->notifyObservers();
 

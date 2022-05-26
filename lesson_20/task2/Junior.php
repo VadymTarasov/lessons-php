@@ -9,20 +9,6 @@ final class Junior implements ObserverInterface
      */
     public int $getJobJunior;
 
-    public function __construct()
-
-    {
-        $this->getJobJunior = mt_rand(0, 1);
-    }
-
-    /**
-     * @return int
-     */
-    public function getGetJobJunior(): int
-    {
-        return $this->getJobJunior = mt_rand(0, 1);
-    }
-
     /**
      * @return void
      */
@@ -30,9 +16,9 @@ final class Junior implements ObserverInterface
     public function resultJuniorWork(): void
     {
         if ($this->getJobJunior < 1) {
-            echo "джун работает плохо    ";
+            echo "<b>джун работает плохо </b><br>";
         } else
-            echo "джун работает хорошо   ";
+            echo "<b>джун работает хорошо</b> <br>";
     }
 
     /**
@@ -41,8 +27,9 @@ final class Junior implements ObserverInterface
      */
     public function update(SubjectInterface $subject): void
     {
+        $this->getJobJunior = mt_rand(0, 1);
         $subject->takeMood($this->getJobJunior);
-
         echo $this->resultJuniorWork() . "<br>";
+        echo $subject->getMood() . "<br>";
     }
 }

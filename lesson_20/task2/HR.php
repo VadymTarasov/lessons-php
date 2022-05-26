@@ -6,20 +6,21 @@ require_once '../../debug.php';
 
 class HR implements ObserverInterface
 {
+    public array $bedJob = [];
 
-    public int $bedJob = 0;
-
-    /**
-     * @param SubjectInterface $subject
-     * @return void
-     */
-    public function update(SubjectInterface $subject): void
+    public function countBadWork($subject)
     {
         foreach ((array)$subject as $k => $v) {
             foreach ((array)$v as $item => $value) {
-                if (array_search(0, (array)$value)) $this->bedJob += 1;
+                if (array_search(0, (array)$value)) array_push($this->bedJob, $value);
             }
         }
-        echo "<br>HR посчитал что, был вынесен выговор программисту " . "$this->bedJob" . " раз <br>";
+        echo "<br>HR посчитал что, был вынесен выговор программисту " . count($this->bedJob) . " раз <br><br>";
+
+    }
+
+    public function update(SubjectInterface $subject): void
+    {
+        $this->countBadWork($subject);
     }
 }

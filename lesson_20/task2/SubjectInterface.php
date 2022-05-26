@@ -2,9 +2,6 @@
 
 namespace App\lesson_20\task2;
 
-/**
- * Интерфейс наблюдаемого объекта.
- */
 interface SubjectInterface
 {
     /**
