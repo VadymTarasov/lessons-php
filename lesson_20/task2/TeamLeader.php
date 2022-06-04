@@ -1,6 +1,7 @@
 <?php
 
 namespace App\lesson_20\task2;
+require_once 'Junior.php';
 
 
 final class TeamLeader implements SubjectInterface
@@ -15,10 +16,14 @@ final class TeamLeader implements SubjectInterface
      */
     public int $mood;
 
+    public array $countGoodJob = [];
+
+    public array $countBadJob = [];
+
     public function __construct()
     {
 
-//        $this->mood = 3;
+//        $this->mood = 2;
         $this->mood = mt_rand(1, 4);
         $this->observers = [];
     }
@@ -46,6 +51,7 @@ final class TeamLeader implements SubjectInterface
                 return;
             }
         }
+
     }
 
     public function notifyObservers(): void
@@ -53,18 +59,31 @@ final class TeamLeader implements SubjectInterface
         foreach ($this->observers as $obs) {
             $obs->update($this);
         }
+
     }
 
     /**
      * @param int $getJobJunior работа джуна.
      */
-    public function takeMood(int $getJobJunior): void
+
+    public function checkWorkJunior(int $getJobJunior): void
     {
-        if ($getJobJunior > 0) {
+        if ($getJobJunior == 1) {
             $this->mood += 1;
-        } else $this->mood -= 1;
-        if ($this->mood > 3 && $getJobJunior == 1) $this->mood = 4;
-        if ($this->mood < 2 && $getJobJunior == 0) $this->mood = 1;
+            if ($this->mood > 3) {
+                $this->mood = 4;
+                $this->countGoodJob[] = 0;
+            }
+            echo 'Джун работает хорошо. ' . $this->getMood();
+        }
+        if ($getJobJunior == 0) {
+            $this->mood -= 1;
+            if ($this->mood < 2) {
+                $this->mood = 1;
+                $this->countBadJob[] = 0;
+            }
+            echo 'Джун работает плохо. ' . $this->getMood();
+        }
     }
 
 }

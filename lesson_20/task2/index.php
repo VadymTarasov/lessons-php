@@ -12,15 +12,19 @@ echo "<pre>";
 $TeamLeader = new TeamLeader();
 echo $TeamLeader->getMood();
 echo "<br>";
-
-$jun  = new Junior();
 $manager = new Manager();
 $hr = new HR();
 
-$TeamLeader->addObserver($jun);
 $TeamLeader->addObserver($manager);
 $TeamLeader->addObserver($hr);
 
+$TeamLeader->checkWorkJunior(Junior::resultJunWork());
+$TeamLeader->checkWorkJunior(Junior::resultJunWork());
+$TeamLeader->checkWorkJunior(Junior::resultJunWork());
+
 $TeamLeader->notifyObservers();
-$TeamLeader->notifyObservers();
+echo "<br>";
+echo $manager->showResult();
+echo "<br>";
+echo $hr->showResult();
 

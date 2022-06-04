@@ -6,21 +6,26 @@ require_once '../../debug.php';
 
 class Manager implements ObserverInterface
 {
-    public array $goodJob = [];
+    public int $goodJob;
 
-    public function countGoodWork($subject): void
+    public function countBadWork($subject): void
     {
         foreach ((array)$subject as $k => $v) {
-            foreach ((array)$v as $item => $value) {
-                if (array_search(1, (array)$value)) array_push($this->goodJob, $value);
+            if ($k == 'countGoodJob') {
+                $this->goodJob = count($v);
             }
+
         }
-        echo "<br>Менеджер посчитал что программиста похвалили " . count($this->goodJob) . " раз <br><br>";
+    }
+
+    public function showResult(): string
+    {
+        return "Менеджер посчитал что программиста похвалили " . $this->goodJob . " раз";
     }
 
     public function update(SubjectInterface $subject): void
     {
-        $this->countGoodWork($subject);
+        $this->countBadWork($subject);
     }
 
 }

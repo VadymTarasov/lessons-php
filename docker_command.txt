@@ -1,0 +1,19 @@
+docker compose down
+
+docker compose up -d
+
+docker compose build && docker compose up -d
+
+docker exec -it project_mysql bash
+
+docker container rm a77bbc0b6cf1
+
+docker container ls -a
+
+docker images
+
+docker ps
+
+docker image rm -f 65b636d5542b
+
+docker rmi <name>

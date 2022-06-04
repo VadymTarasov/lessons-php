@@ -35,12 +35,12 @@ services:
 
 
   mysql:
-      image: mysql:8.0
-      restart: always
-      environment:
-          MYSQL_DATABASE: db2
-          MYSQL_ROOT_PASSWORD: root
-      ports:
-          - 3306:3306
-      container_name: project_mysql
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: db2
+      MYSQL_ROOT_PASSWORD: 123654789
+    ports:
+      - 3306:3306
+    container_name: project_mysql
 
