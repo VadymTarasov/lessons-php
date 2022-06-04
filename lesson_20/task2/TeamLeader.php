@@ -70,17 +70,17 @@ final class TeamLeader implements SubjectInterface
     {
         if ($getJobJunior == 1) {
             $this->mood += 1;
-            if ($this->mood > 3) {
-                $this->mood = 4;
+            if ($this->mood > 4) {
                 $this->countGoodJob[] = 0;
+                $this->mood = 4;
             }
             echo 'Джун работает хорошо. ' . $this->getMood();
         }
         if ($getJobJunior == 0) {
             $this->mood -= 1;
-            if ($this->mood < 2) {
-                $this->mood = 1;
+            if ($this->mood < 1) {
                 $this->countBadJob[] = 0;
+                $this->mood = 1;
             }
             echo 'Джун работает плохо. ' . $this->getMood();
         }
