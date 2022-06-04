@@ -6,13 +6,13 @@ require_once '../../debug.php';
 
 class HR implements ObserverInterface
 {
-    public int $badJob;
+    public int $countRebuke;
 
     public function countBadWork($subject): void
     {
         foreach ((array)$subject as $k => $v) {
-            if ($k == 'countBadJob') {
-                $this->badJob = count($v);
+            if ($k == 'rebuke') {
+                $this->countRebuke = count($v);
             }
         }
     }
@@ -20,7 +20,7 @@ class HR implements ObserverInterface
 
     public function showResult(): string
     {
-        return "HR посчитал что, был вынесен выговор программисту " . $this->badJob . " раз";
+        return "HR посчитал что, был вынесен выговор программисту " . $this->countRebuke . " раз";
     }
 
     public function update(SubjectInterface $subject): void

@@ -6,13 +6,13 @@ require_once '../../debug.php';
 
 class Manager implements ObserverInterface
 {
-    public int $goodJob;
+    public int $countPraise;
 
     public function countBadWork($subject): void
     {
         foreach ((array)$subject as $k => $v) {
-            if ($k == 'countGoodJob') {
-                $this->goodJob = count($v);
+            if ($k == 'praise') {
+                $this->countPraise = count($v);
             }
 
         }
@@ -20,7 +20,7 @@ class Manager implements ObserverInterface
 
     public function showResult(): string
     {
-        return "Менеджер посчитал что программиста похвалили " . $this->goodJob . " раз";
+        return "Менеджер посчитал что программиста похвалили " . $this->countPraise . " раз";
     }
 
     public function update(SubjectInterface $subject): void
