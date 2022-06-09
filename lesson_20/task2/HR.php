@@ -6,17 +6,18 @@ require_once '../../debug.php';
 
 class HR implements ObserverInterface
 {
-    public int $countRebuke;
+    public int $countRebuke = 0;
 
     public function countBadWork($subject): void
     {
         foreach ((array)$subject as $k => $v) {
-            if ($k == 'rebuke') {
-                $this->countRebuke = count($v);
+            foreach ($v as $item => $value){
+                if ($value == 0){
+                    $this->countRebuke += 1;
+                }
             }
         }
     }
-
 
     public function showResult(): string
     {

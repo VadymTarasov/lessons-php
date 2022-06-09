@@ -6,15 +6,16 @@ require_once '../../debug.php';
 
 class Manager implements ObserverInterface
 {
-    public int $countPraise;
+    public int $countPraise = 0;
 
-    public function countBadWork($subject): void
+    public function countGoodWork($subject): void
     {
         foreach ((array)$subject as $k => $v) {
-            if ($k == 'praise') {
-                $this->countPraise = count($v);
+            foreach ($v as $item => $value){
+                if ($value == 5){
+                    $this->countPraise += 1;
+                }
             }
-
         }
     }
 
@@ -25,7 +26,7 @@ class Manager implements ObserverInterface
 
     public function update(SubjectInterface $subject): void
     {
-        $this->countBadWork($subject);
+        $this->countGoodWork($subject);
     }
 
 }
