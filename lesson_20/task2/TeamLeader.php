@@ -16,7 +16,6 @@ final class TeamLeader implements SubjectInterface
      */
     public int $mood;
 
-    public array $allMood = [];
 
     public function __construct()
     {
@@ -66,7 +65,7 @@ final class TeamLeader implements SubjectInterface
     {
         if ($getJobJunior == 1) {
             $this->mood += 1;
-            $this->allMood[] = $this->mood;
+            $this->notifyObservers();
             if ($this->mood > 4) {
                 $this->mood = 4;
             }
@@ -74,11 +73,12 @@ final class TeamLeader implements SubjectInterface
         }
         if ($getJobJunior == 0) {
             $this->mood -= 1;
-            $this->allMood[] = $this->mood;
+            $this->notifyObservers();
             if ($this->mood < 1) {
                 $this->mood = 1;
             }
             echo 'Джун работает плохо. ' . $this->getMood();
         }
+
     }
 }

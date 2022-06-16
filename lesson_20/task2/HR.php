@@ -11,10 +11,8 @@ class HR implements ObserverInterface
     public function countBadWork($subject): void
     {
         foreach ((array)$subject as $k => $v) {
-            foreach ($v as $item => $value){
-                if ($value == 0){
-                    $this->countRebuke += 1;
-                }
+            if ($v == 0) {
+                $this->countRebuke += 1;
             }
         }
     }

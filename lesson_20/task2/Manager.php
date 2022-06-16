@@ -11,10 +11,8 @@ class Manager implements ObserverInterface
     public function countGoodWork($subject): void
     {
         foreach ((array)$subject as $k => $v) {
-            foreach ($v as $item => $value){
-                if ($value == 5){
-                    $this->countPraise += 1;
-                }
+            if ($v == 5) {
+                $this->countPraise += 1;
             }
         }
     }
